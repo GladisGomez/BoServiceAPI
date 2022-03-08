@@ -1,0 +1,700 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BOServicesAPI</name>
+    </assembly>
+    <members>
+        <member name="T:BOServicesAPI.BusinessLogic.AppQRBL">
+            <summary>
+            Clase encargada de la gestion de subrutinas que ocupa la AppQRScannerStickers
+            </summary>
+        </member>
+        <member name="T:BOServicesAPI.BusinessLogic.CatalogsBL">
+            <summary>
+            Clase para el manejo de la capa logica de Catalogos
+            </summary>
+        </member>
+        <member name="M:BOServicesAPI.BusinessLogic.CatalogsBL.#ctor(BOServicesAPI.DBContext.OxxoBoContext,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor de la clase
+            </summary>
+            <param name="context"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="T:BOServicesAPI.BusinessLogic.DriversBL">
+            <summary>
+            Clase para el manejo de la capa logica de Drivers
+            </summary>
+        </member>
+        <member name="M:BOServicesAPI.BusinessLogic.DriversBL.#ctor(BOServicesAPI.DBContext.OxxoBoContext,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor de la clase
+            </summary>
+        </member>
+        <member name="T:BOServicesAPI.BusinessLogic.StationsBL">
+            <summary>
+            Clase para el manejo de la capa logica para Estaciones
+            </summary>
+        </member>
+        <member name="M:BOServicesAPI.BusinessLogic.StationsBL.#ctor(BOServicesAPI.DBContext.OxxoBoContext,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor de la clase
+            </summary>
+            <param name="context"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="F:BOServicesAPI.BusinessLogic.SwaggerConfiguration.EndpointDescription">
+            <summary>
+            <para>GOSMO BackOffice Service API v1.0.0</para>
+            </summary>
+        </member>
+        <member name="F:BOServicesAPI.BusinessLogic.SwaggerConfiguration.ContactName">
+            <summary>
+            <para>Support Gosmo Mexico</para>
+            </summary>
+        </member>
+        <member name="F:BOServicesAPI.BusinessLogic.SwaggerConfiguration.ContactUrl">
+            <summary>
+            <para>https://www.gosmo.mx/contacto</para>
+            </summary>
+        </member>
+        <member name="F:BOServicesAPI.BusinessLogic.SwaggerConfiguration.DocNameV1">
+            <summary>
+            <para>v1.0.0</para>
+            </summary>
+        </member>
+        <member name="F:BOServicesAPI.BusinessLogic.SwaggerConfiguration.DocInfoTitle">
+            <summary>
+            <para>GOSMO BackOffice Service API</para>
+            </summary>
+        </member>
+        <member name="F:BOServicesAPI.BusinessLogic.SwaggerConfiguration.DocInfoVersion">
+            <summary>
+            <para>v1.0.0</para>
+            </summary>
+        </member>
+        <member name="F:BOServicesAPI.BusinessLogic.SwaggerConfiguration.DocInfoDescription">
+            <summary>
+            <para>BackOffice Service API, Gosmo Mexico</para>
+            </summary>
+        </member>
+        <member name="M:BOServicesAPI.Controllers.AuthController.ValidateLogin(BOServicesAPI.Entities.UserDTOS)">
+            <summary>Use this resource to validate a user credentials
+            </summary>  
+            <response code="200">Data correctly, user valid</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.AuthController.GetUserIdLogged(System.String)">
+            <summary>Use this resource to get a user id for user logged
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.AuthController.GetUserFirstNameLogged(System.String)">
+            <summary>Use this resource to get a FirstName for user logged
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CatalogsController.GetVehicleBrands">
+            <summary>Use this resource to get a list of Vehicle Brands
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CatalogsController.GetVehicleModels">
+            <summary>Use this resource to get a list of Vehicle Models
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CatalogsController.GetVehicleCostCenter">
+            <summary>Use this resource to get a list of Cost Center
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>        
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CatalogsController.GetVehicleTypes">
+            <summary>Use this resource to get a list of Vehicle Types
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CatalogsController.GetVehicleStatus">
+            <summary>Use this resource to get a list of Vehicle Status
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CatalogsController.GetFuelTypes">
+            <summary>Use this resource to get a list of Fuel Types
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CatalogsController.GetUnitsOnOdometer">
+            <summary>Use this resource to get a list of Units on the odometer
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.ClientsController.GetListClientsByUserNameWeb(System.String)">
+            <summary>Use this resource to get a list of clients
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.ClientsController.GetListCedisByUserNameWebAndClientGroup(System.String,System.Int32)">
+            <summary>Use this resource to get a list of cedis
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.ClientsController.GetListCedisByClientGroup(System.Int32)">
+            <summary>Use this resource to get a list of cedis
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.ContingenciesController.GetContingenciesByType(System.Int32)">
+            <summary>Use this resource to get a list of Contingencies By Type
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.ContingenciesController.GetContingenciesByClientAndTypeContingency(System.Int32,System.Int32)">
+            <summary>Use this resource to get a list of Contingencies By Client
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.ContingenciesController.GetContingenciesByStationAndTypeContingency(System.Int32,System.Int32)">
+            <summary>Use this resource to get a list of Contingencies By Station
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.ContingenciesController.InsertContingencyData(BOServicesAPI.Entities.AuxContingencies)">
+            <summary>Use this resource to insert a Contingency
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CustomizationStikerController.InitialChargeStiker(BOServicesAPI.Entities.CustomizationSticker.Assignment)">
+            <summary>Sid initial load for sid generated and backed up
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CustomizationStikerController.SidsGeneration(BOServicesAPI.Entities.CustomizationSticker.GenerationCustomStikerDtos)">
+            <summary>Use this resource to get an SID list
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CustomizationStikerController.SendToSupplierCustomSticker(BOServicesAPI.Entities.SendToSupplierDtos)">
+            <summary>Send To Supplier CustomSticker
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CustomizationStikerController.UIDAssignment(BOServicesAPI.Entities.CustomizationSticker.Assignment)">
+            <summary>mapping uid to sid
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CustomizationStikerController.vehicleAssignment(BOServicesAPI.Entities.VehicleAssignmentDtos)">
+            <summary>mapping  vehicle to uid
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CustomizationStikerController.MassiveehicleAssignment(BOServicesAPI.Entities.CustomizationSticker.Assignment)">
+            <summary>mapping  vehicle to uid massive
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CustomizationStikerController.ValidationUID(BOServicesAPI.Entities.UidDtos)">
+            <summary>uid validation
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.CustomStickersTrakings.GetStickersTrakings(BOServicesAPI.Entities.CustomizationSticker.CustomSid)">
+            <summary>Sid initial load for sid generated and backed up
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.DriversController.GetDrivers">
+            <summary>Use this resource to get a list of Drivers
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.DriversController.InsertDriverData(BOServicesAPI.Entities.AuxDrivers)">
+            <summary>Use this resource to insert a Driver
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.SecuritySticker.EncryptionGosmo(System.String)">
+            <summary>Sensitive data encryption sticker
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.SecuritySticker.DecryptionGosmo(System.String)">
+            <summary>Sensitive data decryption sticker
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.SecuritySticker.EncryptionSid(System.String)">
+            <summary>Sid exclusive encryption
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.SecuritySticker.DecryptionSid(System.String)">
+            <summary>Sid exclusive dencryption
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>            
+        </member>
+        <member name="M:BOServicesAPI.Controllers.StationsController.GetGasStations">
+            <summary>Use this resource to get a list of Gas Stations
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.TokensController.Token(BOServicesAPI.Entities.UserDTOS)">
+            <summary>Use this resource to get an ApiKey
+            </summary>  
+            <response code="200">Data generated correctly.</response>        
+            <response code="400">BadRequest.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.TokensController.Login(System.String,System.String)">
+            <summary>
+            Metodo encargado de validar las credenciales ingresadas para generar el Token
+            </summary>
+            <param name="User"></param>
+            <param name="Pwd"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.Controllers.VehiclesController.GetIdVehicleByPlate(System.String)">
+            <summary>Use this resource to get a id vehicle for plate
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.VehiclesController.GetIdVehicleByEco(System.String)">
+            <summary>Use this resource to get a id vehicle for eco
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.VehiclesController.GetListVehiclesByUserNameWe(System.String)">
+            <summary>Use this resource to get a list vehicles
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.VehiclesController.GetListVehiclesByCedi(System.Int32)">
+            <summary>Use this resource to get a list vehicles
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.VehiclesController.GetListStickersByVehicle(System.Int32)">
+            <summary>Use this resource to get a list stickers assigned a Vehicle
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.VehiclesController.InsertUpdateVehicleData(BOServicesAPI.Entities.VehicleData)">
+            <summary>Use this resource to insert or Update a Vehicle
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.Controllers.WorkLogController.InsertWorkLogData(BOServicesAPI.Entities.WorkLog)">
+            <summary>Use this resource to insert a AuditWeb
+            </summary>  
+            <response code="200">Data correctly</response>        
+            <response code="400">BadRequest.</response>      
+            <response code="401">Unauthorized.</response>         
+        </member>
+        <member name="M:BOServicesAPI.DataBase.AuthDB.GetUserId(System.String)">
+            <summary>
+            Obtiene el id del usuario
+            </summary>
+            <param name="UserName">Nombre del usuario</param>
+            <returns>Id del usuario</returns>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.AuthDB.GetUserName(System.String)">
+            <summary>
+            Obtiene el nombre del usuario
+            </summary>
+            <param name="UserName">Nombre del usuario</param>
+            / <param name="Password">Password del usuario</param>
+            <returns>Nombre del usuario</returns>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.AuthDB.UserIsValid(System.String,System.String,System.String)">
+            <summary>
+            Verifica si el usuario es válido
+            </summary>
+            <param name="Name">Nombre del usuario</param>
+            <param name="Password">Password del usuario</param>
+            <param name="permisoAppSticker"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.AuthDB.UserExist(System.Int32)">
+            <summary>
+            Verifica si el usuario existe
+            </summary>
+            <param name="idUser">Identificador de Usuario</param>
+            <returns></returns>
+        </member>
+        <member name="T:BOServicesAPI.DataBase.CatalogsDB">
+            <summary>
+            Clase para el manejo de Catalogos
+            </summary>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CatalogsDB.#ctor(BOServicesAPI.DBContext.OxxoBoContext)">
+            <summary>
+            Constructor de la clase
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CatalogsDB.VehicleBrands">
+            <summary>
+            Metodo encargado de obtener la lista de marcas de vehiculo
+            </summary>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CatalogsDB.VehicleModels">
+            <summary>
+            Metodo encargado de obtener la lista de modelos de vehiculo
+            </summary>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CatalogsDB.VehicleTypes">
+            <summary>
+            Metodo encargado de obtener la lista de tipos de vehiculos
+            </summary>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CatalogsDB.VehicleStatus">
+            <summary>
+            Metodo encargado de obtener la lista de status del vehiculo
+            </summary>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CatalogsDB.FuelTypes">
+            <summary>
+            Metodo encargado de obtener la lista de tipos de combustible
+            </summary>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CatalogsDB.UnitsOnOdometer">
+            <summary>
+            Metodo encargado de obtener la lista de unidades en el odometro
+            </summary>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.ClientsDB.IsSecurityAdministrator(System.String)">
+            <summary>
+            Determina si el usuario logueado es Security Administrator
+            </summary>
+            <returns>True or False</returns>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.ClientsDB.GetListClientsInUserWeb(System.String)">
+            <summary>
+            Obtiene la lista de los modelos clientes asignados al usuario
+            </summary>
+            <param name="userWebName"></param>
+            <returns>Lista de clientes</returns>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.ClientsDB.GetListClientInUserWebByClientGroupAndUserName(System.String,System.Int32)">
+            <summary>
+            Metodo encargado de obtener un listado de Grupos de un userWeb
+            </summary>
+            <param name="userName"></param>
+            <param name="ClientG"></param>
+            <returns>Lista de grupos</returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.ClientsDB.GetListCedisByClientGroup(System.Int32)">
+            <summary>
+            Metodo encargado de obtener un listado de Grupos de un userWeb
+            </summary>
+            <param name="userName"></param>
+            <param name="ClientG"></param>
+            <returns>Lista de grupos</returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="T:BOServicesAPI.DataBase.ContingenciesDB">
+            <summary>
+            Clase para el manejo de Contingencias
+            </summary>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.ContingenciesDB.#ctor(BOServicesAPI.DBContext.OxxoBoContext)">
+            <summary>
+            Constructor de la clase
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.ContingenciesDB.GetContingenciesByType(System.Int32)">
+            <summary>
+            Metodo encargado de obtener una lista de contingencias dependiendo el valor que reciba como tipo
+            </summary>
+            <param name="TypeContingency"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.ContingenciesDB.GetContingenciesByClientAndTypeContingency(System.Int32,System.Int32)">
+            <summary>
+            Metodo encargado de obtener una lista de contingencias dependiendo el cliente
+            </summary>
+            <param name="idClient"></param>
+            <param name="typeContingency"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.ContingenciesDB.GetContingenciesByStationAndTypeContingency(System.Int32,System.Int32)">
+            <summary>
+            Metodo encargado de obtener una lista de contingencias dependiendo el valor que reciba como tipo
+            </summary>
+            <param name="idStation"></param>
+            <param name="typeContingency"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.ContingenciesDB.InsertContingencyData(BOServicesAPI.Entities.AuxContingencies)">
+            <summary>
+            Metodo encargado de insertar una contingencia en base de datos
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CustomStickersDB.listCustomStickers">
+            <summary>
+            Metodo encargado de obtener una lista de Stickers Personalizados
+            </summary>
+            <returns></returns>
+            <created>Erika Magneally</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CustomStickersDB.getCustomStickers(System.String)">
+            <summary>
+            Metodo encargado de obtener Stickers Personalizados mediante sid
+            </summary>
+            <returns></returns>
+            <created>Erika Magneally</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CustomStickersDB.getCustomStickersList(System.Collections.Generic.List{System.String})">
+            <summary>
+            Metodo encargado de obtener Stickers Personalizados mediante lista de sid
+            </summary>
+            <returns></returns>
+            <created>Erika Magneally</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CustomStickersDB.AddCustomStickers(BOServicesAPI.Models.CustomStickers,BOServicesAPI.Models.CustomStickersTrakings)">
+            <summary>
+            Metodo encargado de Registrar Stickers Personalizados
+            </summary>
+            <returns></returns>
+            <created>Erika Magneally</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CustomStickersDB.UpdatecustomSticker(BOServicesAPI.Models.CustomStickers,BOServicesAPI.Models.CustomStickersTrakings)">
+            <summary>
+            Metodo encargado de Modificar Stickers Personalizados
+            </summary>
+            <returns></returns>
+            <created>Erika Magneally</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CustomStickersDB.UpdatecustomStickerList(System.Collections.Generic.List{BOServicesAPI.Models.CustomStickers},System.Collections.Generic.List{BOServicesAPI.Models.CustomStickersTrakings})">
+            <summary>
+            Metodo encargado  de Modificar  un listados de Stickers Personalizados
+            </summary>
+            <returns></returns>
+            <created>Erika Magneally</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CustomStickersTrakingDB.listCustomStickers">
+            <summary>
+            Metodo encargado de obtener una lista de seguimiento de Stickers Personalizados
+            </summary>
+            <returns></returns>
+            <created>Erika Magneally</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CustomStickersTrakingDB.listCustomStickers(System.String)">
+            <summary>
+            Metodo encargado de obtener una lista de seguimiento de Stickers Personalizados por SidPersonalizado
+            </summary>
+            <returns></returns>
+            <created>Erika Magneally</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.CustomStickersTrakingDB.AddcustomStickers(BOServicesAPI.Models.CustomStickersTrakings)">
+            <summary>
+            Metodo encargado de registrar un nuevo seguimiento de Stickers Personalizados
+            </summary>
+            <returns></returns>
+            <created>Erika Magneally</created>
+        </member>
+        <member name="T:BOServicesAPI.DataBase.DriversDB">
+            <summary>
+            Clase para el manejo de consultas para Drivers
+            </summary>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.DriversDB.GetDrivers">
+            <summary>
+            Metodo encargado de obtener una lista de Drivers
+            </summary>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.DriversDB.InsertDriverData(BOServicesAPI.Entities.AuxDrivers)">
+            <summary>
+            Metodo encargado de insertar un driver en base de datos
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="T:BOServicesAPI.DataBase.StationsDB">
+            <summary>
+            Clase para el manejo de base de datos de Estaciones
+            </summary>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.StationsDB.#ctor(BOServicesAPI.DBContext.OxxoBoContext)">
+            <summary>
+            Constructor de la clase
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.StationsDB.GetGasStations">
+            <summary>
+            Metodo encargado de obtener un listado de GasStations
+            </summary>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.VehiclesDB.GetIdVehicleByPlate(System.String)">
+            <summary>
+            Metodo encargado de obtener un Vehiculo buscado por placa
+            </summary>
+            <param name="plate"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.VehiclesDB.GetIdVehicleByEco(System.String)">
+            <summary>
+            Metodo encargado de obtener un vehiculo buscado por ECO
+            </summary>
+            <param name="eco"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.VehiclesDB.listVehicles(System.String)">
+            <summary>
+            Metodo encargado de obtener una lista de vehiculos asignados a un Usuario del Sitio Web
+            </summary>
+            <param name="UserWeb">Username de usuario de UserWebSet</param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.VehiclesDB.listVehiclesByCedi(System.Int32)">
+            <summary>
+            Metodo encargado de obtener una lista de vehiculos asignados a un Usuario del Sitio Web por cedi seleccionado
+            </summary>
+            <param name="Cedi"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.VehiclesDB.listStickersByIdVehicle(System.Int32)">
+            <summary>
+            Metodo encargado de obtener una lista de Stickers asociados a un vehiculo
+            </summary>
+            <param name="idVehicle"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.VehiclesDB.insertUpdateVehicleData(BOServicesAPI.Entities.VehicleData)">
+            <summary>
+            Metodo encargado de insertar un vehiculo en base de datos
+            </summary>
+            <param name="auxData"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.VehiclesDB.getPublicNumber">
+            <summary>
+            Metodo encargado de obtener el PublicID
+            </summary>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.VehiclesDB.ValidaNullData(BOServicesAPI.Entities.VehicleData)">
+            <summary>
+            Metodo para validar datos de Vehicle 
+            </summary>
+            <param name="auxData"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="M:BOServicesAPI.DataBase.WorkLogDB.InsertWorkLogData(BOServicesAPI.Entities.WorkLog)">
+            <summary>
+            Metodo encargado de registrar en bitacora
+            </summary>
+            <param name="auxData"></param>
+            <returns></returns>
+            <created>Daniel Munguia</created>
+        </member>
+        <member name="T:BOServicesAPI.Entities.AuxDrivers">
+            <summary>
+            Clase para el manejo de de entidades de Drivers
+            </summary>
+        </member>
+        <member name="T:BOServicesAPI.Entities.AuxStations">
+            <summary>
+            Clase para entidades de Gas Stations
+            </summary>
+        </member>
+    </members>
+</doc>
